@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function getComputerChoice(){
+            return Math.floor(Math.random() * 3)
+        }
+
+        function getHumanChoice(){
+            return Number(window.prompt("Make a selection:\n Enter 0 for Rock\n Enter 1 for Paper\n Enter 2 for Scissors", ""));
+        }
+
+        function playRound(firstPlayer, secondPlayer){
+            if(firstPlayer==secondPlayer){
+                console.log("It's a tie!")
+                return -1;
+            }
+            else if(firstPlayer==0 && secondPlayer==1){
+                console.log("Computer: Rock\n You: Paper")
+                console.log("You win this round! Paper beats Rock!")
+                return 1;
+            }
+            else if(firstPlayer==0 && secondPlayer==2){
+                console.log("Computer: Rock\n You: Scissors")
+                console.log("You lose this round! Rock beats Scissors!")
+                return 0;
+            }
+            else if(firstPlayer==1 && secondPlayer==0){
+                console.log("Computer: Paper\n You: Rock")
+                console.log("You lose this round! Paper beats Rock")
+                return 0;
+            }
+            else if(firstPlayer==1 && secondPlayer==2){
+                console.log("Computer: Paper\n You: Scissors")
+                console.log("You win this round! Scissor beats Paper")
+                return 1;
+            }
+             else if(firstPlayer==2 && secondPlayer==0){
+                console.log("Computer: Scissors\n You: Rock")
+                console.log("You win this round! Rock beats Scissors")
+                return 1;
+            }
+            else if(firstPlayer==2 && secondPlayer==1){
+                console.log("Computer: Scissors\n You: Paper")
+                console.log("You lose this round! Scissor beats Paper")
+                return 0;
+            }
+            else{
+                console.log("Invalid Input!" + firstPlayer + secondPlayer)
+                return -1;
+            }
+        }
+
+        function playGame(){
+            let computerScore = 0;
+            let humanScore = 0;
+            let player = -1;
+            for(let i=0; i<5; i++){
+                player = playRound(getComputerChoice(), getHumanChoice())
+                if (player==0){
+                    computerScore++;
+                }
+                if(player==1){
+                    humanScore++;
+                }
+            }
+            if(humanScore>computerScore){
+                console.log("Winner is the Computer!")
+            }
+            else{
+                console.log("You are the winner!")
+            }
+        }
+
+        playGame();
+
+    </script>
+    
+</body>
+</html>
