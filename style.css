@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    color: rgb(154, 154, 255);
+    font-size: 30px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+button {
+    background-color: black;
+    color: rgb(154, 154, 255);
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#start {
+    background-color: white;
+    border-radius: 2%;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 900;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#start:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#start:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+img {
+    width: 120px;
+    height: 120px;
+}
